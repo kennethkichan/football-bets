@@ -1,5 +1,4 @@
 import http.client
-import sys
 from dotenv import load_dotenv
 import os
 
