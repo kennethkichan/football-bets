@@ -29,20 +29,22 @@ for arg in sys.argv[1]:
     if not is_intstring(arg):
         sys.exit("All arguments must be integers. Exit.")
 
-id = int(sys.argv[1])
+fixture_id = int(sys.argv[1])
 
 def get_pred(id):
     """
     Parameters
     ----------
-    id = Fixture ID
+    id : int
+        Fixture ID
 
     Returns
     ----------
-    results = Prediction results
+    results : str
+        Prediction results
     """
     
-    req = "/predictions?fixture={fixture_id}".format(fixture_id=id)
+    req = "/predictions?fixture={id}".format(id=fixture_id)
     print('Requesting Fixture ID', req)
 
     try:
@@ -55,4 +57,4 @@ def get_pred(id):
     except ValueError:
         return False
 
-get_pred(id)
+get_pred(fixture_id)
