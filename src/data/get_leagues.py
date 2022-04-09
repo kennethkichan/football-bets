@@ -23,4 +23,4 @@ def get_fixtures():
 
     print(data.decode("utf-8"))
 
-get_fixtures()
+#get_fixtures()

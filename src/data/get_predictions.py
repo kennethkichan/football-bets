@@ -25,14 +25,18 @@ def is_intstring(s):
         return True
     except ValueError:
         return False
-for arg in sys.argv[1]:
-    if not is_intstring(arg):
-        sys.exit("All arguments must be integers. Exit.")
 
-fixture_id = int(sys.argv[1])
+# If arguments exist
+if len(sys.argv) > 1:
+    for arg in sys.argv[1]:
+        if not is_intstring(arg):
+            sys.exit("All arguments must be integers. Exit.")
+    fixture_id = int(sys.argv[1])
 
-def get_pred(id):
+def get_prediction(id):
     """
+    Get prediction by Fixture ID
+
     Parameters
     ----------
     id : int
@@ -57,4 +61,4 @@ def get_pred(id):
     except ValueError:
         return False
 
-get_pred(fixture_id)
+#get_pred(fixture_id)
